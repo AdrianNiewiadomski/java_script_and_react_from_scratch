@@ -15,25 +15,107 @@
 
     <article>
         <p>
-            To store our data in memory we may create variables. To do this we use a keyword "var".
+            To store our data in memory we may create variables. 
+            To do this we use a keyword "var", then a variable name in camelCase. 
         </p>
-        <p>   </p>
+        <div class="javascript">
+            <div class="label">JavaScript</div>
+            <div class="javascript-editor">
+                <span class="keyword">var</span> myVariable;
+            </div>        
+        </div>
     </article>
-    <div class="javascript">
-        <div class="label">JavaScript</div>
-        <div class="javascript-editor">
-            <span class="keyword">var</span> myVariable = <span class="literal">2</span>;</br>
-            console.<span class="function">log</span>(myVariable);
-        </div>        
-    </div>
-    <div class="console">
-        <div class="label">Console</div>
-        <div class="javascript-console">
-            2
-        </div>        
-    </div>
-    <p>In JavaScript we use a keyword var to store data in memory.</p>
-    <p>JavaScript supports </p>
-    span#
+
+    <article>
+        <p>
+            If we want to assign a value to variable we use an assignment operator "=".
+        </p>
+        <div class="javascript">
+            <div class="label">JavaScript</div>
+            <div class="javascript-editor">
+                <span class="keyword">var</span> myVariable = <span class="literal">2</span>;</br>
+                console.<span class="function">log</span>(myVariable);
+            </div>        
+        </div>
+        <div class="console">
+            <div class="label">Console</div>
+            <div class="javascript-console">
+                2
+            </div>        
+        </div>
+    </article>
+    
+    <article>
+        <p>
+            In JavaScript variables may hold various data types. 
+            Some of the data types are boolean values, numbers, strings, and objects.   
+        </p>
+        <div class="javascript">
+            <div class="label">JavaScript</div>
+            <div class="javascript-editor">
+                <p>
+                    <span class="keyword">var</span> isPasswordCorrect = <span class="literal">true</span>;</br>
+                    console.<span class="function">log</span>(isPasswordCorrect);
+                </p>
+                
+                <p>
+                    <span class="keyword">var</span> myString = <span class="string">'Mary had a little lamb'</span>;</br>
+                    console.<span class="function">log</span>(myString);</br>
+                </p>
+                
+                <p>
+                    <span class="keyword">var</span> myDoc = document;</br>
+                    console.<span class="function">log</span>(myDoc);
+                </p>                
+            </div>        
+        </div>
+        <div class="console">
+            <div class="label">Console</div>
+            <div class="javascript-console">
+                <p>true</p>
+                <p>Mary had a little lamb</p>
+                <p>HTMLDocument</p>                
+            </div>        
+        </div>
+    </article>
+
+    <article>
+        <p>
+            JavaScript is a dynamically-typed language. This in practice means that type of data you store in variable may change.
+        </p>
+        <div class="javascript">
+            <div class="label">JavaScript</div>
+            <div class="javascript-editor">
+                <p>
+                    <span class="keyword">var</span> x = <span class="literal">2</span>;</br>
+                    console.<span class="function">log</span>(x + ' is ' + typeof(x));
+                </p>
+                
+                <p>
+                    x = <span class="string">'Mary had a little lamb'</span>;</br>
+                    console.<span class="function">log</span>(x + ' is ' + typeof(x));
+                </p>
+                
+                <p>
+                    x = <span class="literal">true</span>;</br>
+                    console.<span class="function">log</span>(x + ' is ' + typeof(x));
+                </p>
+
+                <p>
+                    x = document;</br>
+                    console.<span class="function">log</span>(x + ' is ' + typeof(x));
+                </p>                
+            </div>        
+        </div>
+        <div class="console">
+            <div class="label">Console</div>
+            <div class="javascript-console">
+                <p>2 is number</p>
+                <p>Mary had a little lamb is string</p>
+                <p>true is boolean</p>
+                <p>[object HTMLDocument] is object</p>              
+            </div>        
+        </div>
+    </article>
 </body>
 </html>

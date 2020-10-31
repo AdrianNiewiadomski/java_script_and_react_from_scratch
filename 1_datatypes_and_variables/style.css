@@ -1,6 +1,8 @@
 body,
 article {
     font-family: sans-serif, Arial, Helvetica;
+    margin-top: 40px;
+    line-height: 1.6;
 }
 .javascript,
 .console {
@@ -12,12 +14,12 @@ article {
     color: darkcyan;
     margin-bottom: 0;
     padding-bottom: 0;
-    line-height: 1.6;
 }
 .javascript-editor,
 .javascript-console {
     font-family: "Courier New", Courier, monospace;
     border: 1px solid #ccc;
+    background-color: #eee;
     padding: 10px;
     font-weight: bold;
 }
