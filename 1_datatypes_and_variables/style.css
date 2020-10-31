@@ -1,0 +1,35 @@
+body,
+article {
+    font-family: sans-serif, Arial, Helvetica;
+}
+.javascript,
+.console {
+    margin-top: 20px;
+    width: 1000px;
+}
+.javascript .label,
+.console .label {
+    color: darkcyan;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 1.6;
+}
+.javascript-editor,
+.javascript-console {
+    font-family: "Courier New", Courier, monospace;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-weight: bold;
+}
+.javascript span.keyword {
+    color: blueviolet;
+}
+.javascript span.literal {
+    color: orange;
+}
+.javascript span.string {
+    color: green;
+}
+.javascript span.function {
+    color: darkcyan;
+}
