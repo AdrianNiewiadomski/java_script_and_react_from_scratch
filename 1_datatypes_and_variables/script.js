@@ -24,7 +24,7 @@
 
 function parseElement(innerHTML){
     let lines = innerHTML.split('\n');
-    lines = lines.map(element => element.replace('var', '<span class="keyword">var</span>'));
+    lines = lines.map(element => element.replace(/[^A_Za-z0-9$_](var)[^A_Za-z0-9$_]/g, '<span class="keyword">var</span> '));
     return lines.join(separator='<br>');    
 }
 
