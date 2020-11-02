@@ -20,11 +20,27 @@
 // console.log(myString);
 
 // var myDoc = document;
-// console.log(myDoc);  
+// console.log(myDoc); 
+
+function replaceKeywords(line){
+    let keywords = ['var', 'function', 'return'];
+
+    keywords.forEach(keyword => {
+        let re = new RegExp('[^A_Za-z0-9_]{}[^A_Za-z0-9_]'.replace('{}', keyword), 'g');
+        line = line.replace(re, ' <span class="keyword">{}</span> '.replace('{}', keyword));
+    });
+
+    return line;
+}
 
 function parseElement(innerHTML){
     let lines = innerHTML.split('\n');
-    lines = lines.map(element => element.replace(/[^A_Za-z0-9$_](var)[^A_Za-z0-9$_]/g, '<span class="keyword">var</span> '));
+
+    lines = lines.filter(line => /[A-Za-z0-9]/g.test(line))
+                .map(line => {        
+                    return replaceKeywords(line);
+                });
+
     return lines.join(separator='<br>');    
 }
 
