@@ -10,7 +10,7 @@
     <script type="text/javascript" src="script.js"></script>
     
 </head>
-<body>
+<body onload="updateEditorStyle()">
     <h1>Datatypes and variables</h1>
 
     <article>
@@ -21,7 +21,8 @@
         <div class="javascript">
             <div class="label">JavaScript</div>
             <div class="javascript-editor">
-                <span class="keyword">var</span> myVariable;
+                avar myVariable;
+                <!-- <span class="keyword">var</span> myVariable; -->
             </div>        
         </div>
     </article>
@@ -33,8 +34,10 @@
         <div class="javascript">
             <div class="label">JavaScript</div>
             <div class="javascript-editor">
-                <span class="keyword">var</span> myVariable = <span class="literal">2</span>;</br>
-                console.<span class="function">log</span>(myVariable);
+                vars myVariable = 2;
+                console.log(myVariable);
+                <!-- <span class="keyword">var</span> myVariable = <span class="literal">2</span>;</br>
+                console.<span class="function">log</span>(myVariable); -->
             </div>        
         </div>
         <div class="console">
@@ -53,7 +56,17 @@
         <div class="javascript">
             <div class="label">JavaScript</div>
             <div class="javascript-editor">
-                <p>
+                
+                    var isPasswordCorrect = true;
+                    console.log(isPasswordCorrect);
+                
+                    var myString = 'Mary had a little lamb';
+                    console.log(myString);
+                
+                    var myDoc = document;
+                    console.log(myDoc);
+
+                <!-- <p>
                     <span class="keyword">var</span> isPasswordCorrect = <span class="literal">true</span>;</br>
                     console.<span class="function">log</span>(isPasswordCorrect);
                 </p>
@@ -66,7 +79,7 @@
                 <p>
                     <span class="keyword">var</span> myDoc = document;</br>
                     console.<span class="function">log</span>(myDoc);
-                </p>                
+                </p>                 -->
             </div>        
         </div>
         <div class="console">
@@ -86,7 +99,20 @@
         <div class="javascript">
             <div class="label">JavaScript</div>
             <div class="javascript-editor">
-                <p>
+                
+                    var x = 2;
+                    console.log(x + ' is ' + typeof(x));
+                
+                    x = 'Mary had a little lamb';
+                    console.log(x + ' is ' + typeof(x));
+                
+                    x = true;
+                    console.log(x + ' is ' + typeof(x));
+                
+                    x = document;
+                    console.log<(x + ' is ' + typeof(x));
+
+                    <!-- <p>
                     <span class="keyword">var</span> x = <span class="literal">2</span>;</br>
                     console.<span class="function">log</span>(x + ' is ' + typeof(x));
                 </p>
@@ -104,7 +130,7 @@
                 <p>
                     x = document;</br>
                     console.<span class="function">log</span>(x + ' is ' + typeof(x));
-                </p>                
+                </p>              -->
             </div>        
         </div>
         <div class="console">

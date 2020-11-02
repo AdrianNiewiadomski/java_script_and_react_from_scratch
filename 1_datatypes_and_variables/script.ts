@@ -23,15 +23,18 @@
 // console.log(myDoc);  
 
 function parseElement(innerHTML){
-    let lines = innerHTML.split('\n');
-    lines = lines.map(element => element.replace('var', '<span class="keyword">var</span>'));
-    return lines.join(separator='<br>');    
+    if(innerHTML.search('var')){
+        return innerHTML.replace('var', '<span class="keyword">var</span>');
+    }
 }
 
 function updateEditorStyle() {
     let elements = document.getElementsByClassName("javascript-editor");
     
-    for(let i = 0; i < elements.length; i++) {
-        elements[i].innerHTML = parseElement(elements[i].innerHTML);
-    }
+    // console.log(x[0].innerHTML);
+
+    // document.getElementsByClassName("javascript-editor")[0].innerHTML = 'doopa';
+    // elements.forEach(el => {
+    //     el.innerHTML = parseElement(el.innerHTML);
+    // });
 }
