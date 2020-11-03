@@ -27,7 +27,7 @@ article {
     color: blueviolet;
 }
 .javascript span.literal {
-    color: orange;
+    color: rgb(214, 95, 10);
 }
 .javascript span.string {
     color: green;
