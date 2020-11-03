@@ -22,23 +22,60 @@
 // var myDoc = document;
 // console.log(myDoc); 
 
-function replaceKeywords(line){
-    let keywords = ['var', 'function', 'return'];
+class Line {
+    constructor(line){
+        this.line = line;
+    }
 
-    keywords.forEach(keyword => {
-        let re = new RegExp('[^A_Za-z0-9_]{}[^A_Za-z0-9_]'.replace('{}', keyword), 'g');
-        line = line.replace(re, ' <span class="keyword">{}</span> '.replace('{}', keyword));
-    });
+    parseKeywords(){
+        let keywords = ['class', 'var', 'let', 'const', 'function', 'return', 'constructor'];
+    
+        keywords.forEach(keyword => {
+            let re = new RegExp('[^A_Za-z0-9_]{}[^A_Za-z0-9_]'.replace('{}', keyword), 'g');
+            this.line = this.line.replace(re, ' <span class="keyword">{}</span> '.replace('{}', keyword));
+        });
+    
+        return this;
+    }
 
-    return line;
+    parseStrings() {
+        let result = this.line.match(/[ ]['"][A-Za-z0-9 ]*['"]/g);
+        
+        if(result != null){
+            result.forEach(el => {
+                this.line = this.line.replace(el, '<span class="string">'+el+'</span>');
+            });
+        }
+
+        return this;
+    }
+
+    getLine(){
+        return this.line;
+    }
 }
+
+// function replaceKeywords(line){
+//     let keywords = ['var', 'function', 'return'];
+
+//     keywords.forEach(keyword => {
+//         let re = new RegExp('[^A_Za-z0-9_]{}[^A_Za-z0-9_]'.replace('{}', keyword), 'g');
+//         line = line.replace(re, ' <span class="keyword">{}</span> '.replace('{}', keyword));
+//     });
+
+//     return line;
+// }
 
 function parseElement(innerHTML){
     let lines = innerHTML.split('\n');
 
     lines = lines.filter(line => /[A-Za-z0-9]/g.test(line))
                 .map(line => {        
-                    return replaceKeywords(line);
+                    // return replaceKeywords(line);
+                    return new Line(line)
+                        .parseKeywords()
+                        .parseStrings()
+                        .getLine();
                 });
 
     return lines.join(separator='<br>');    
